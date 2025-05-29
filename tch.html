@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>หน้าครูที่ปรึกษา</title>
+  <link rel="stylesheet" href="tch.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1>ระบบติดตามข้อมูลการเยี่ยมบ้าน</h1>
+  <div class="info">
+    <div class="info-header">
+      <span><strong>ชื่อครูที่ปรึกษา:</strong> <span id="teacher-name">ครูสมชาย ใจดี</span></span>
+      <span><strong>ชื่อครูที่ปรึกษาร่วม:</strong> <span id="teacher-name">ครูสมหญิง ใจดี</span></span>
+      <span><strong>ห้อง:</strong> <span id="class-name"></span>ม.3/2</span></span>
+    </div>
+    <div class="info-stats">
+      <span><strong>จำนวนนักเรียนทั้งหมด:</strong> <span id="total-students">-</span></span>
+      <span><strong>กรอกข้อมูลแล้ว:</strong> <span id="filled-students">-</span></span>
+      <span><strong>อนุมัติแล้ว:</strong> <span id="approved-students">-</span></span>
+      <span><strong>รออนุมัติ:</strong> <span id="waiting-students">-</span></span>
+      <span><strong>ยังไม่กรอก:</strong> <span id="notfilled-students">-</span></span>
+    </div>
+  </div>
+  
+  
+
+  <table>
+    <thead>
+      <tr>
+        <th>เลขที่</th>
+        <th>ชื่อ - สกุล</th>
+        <th>สถานะ</th>
+        <th>จัดการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td><a href="student_detail.html?id=001">เด็กชาย</a></td>
+        <td><span class="status waiting">รออนุมัติ</span></td>
+        <td><button disabled>ยกเลิกอนุมัติ</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><a href="student_detail.html?id=002">เด็กหญิง</a></td>
+        <td><span class="status approved">อนุมัติแล้ว</span></td>
+        <td><button onclick="alert('ยกเลิกอนุมัติแล้ว')">ยกเลิกอนุมัติ</button></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><span style="color:gray;">เด็กชาย ก บ</span></td>
+        <td><span class="status not-filled">ยังไม่กรอกข้อมูล</span></td>
+        <td>-</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

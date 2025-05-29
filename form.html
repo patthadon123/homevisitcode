@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบฟอร์มเยี่ยมบ้านนักเรียน</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form action="submit.php" method="post">
+    <h2>ส่วนที่ 1: แบบบันทึกการเยี่ยมบ้านนักเรียน</h2>
+
+    <div class="form-section">
+      <div class="form-row">
+        <div class="form-group">
+          <label>ชื่อนักเรียน:</label>
+          <input type="text" name="student_name">
+        </div>
+        <div class="form-group">
+          <label>ชั้น:</label>
+          <select name="class">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>ม.1</option><option>ม.2</option><option>ม.3</option>
+            <option>ม.4</option><option>ม.5</option><option>ม.6</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ห้อง:</label>
+          <select name="room">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option><option>9</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>เลขที่:</label>
+          <input type="text" name="student_number">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>ชื่อครูที่ปรึกษา:</label>
+          <input type="text" name="teacher_name">
+        </div>
+        <div class="form-group">
+          <label>ชื่อครูที่ปรึกษา:</label>
+          <input type="text" name="teacher_name">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>ข้อมูลครอบครัวผู้ปกครอง</h3>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>บิดาชื่อ:</label>
+          <input type="text" name="father_name">
+        </div>
+        <div class="form-group">
+          <label>อาชีพ:</label>
+          <input type="text" name="father_occupation">
+        </div>
+        <div class="form-group">
+          <label>รายได้:</label>
+          <input type="text" name="father_income">
+        </div>
+        <div class="form-group">
+          <label>เบอร์โทรศัพท์:</label>
+          <input type="text" name="father_phone">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>มารดาชื่อ:</label>
+          <input type="text" name="mother_name">
+        </div>
+        <div class="form-group">
+          <label>อาชีพ:</label>
+          <input type="text" name="mother_occupation">
+        </div>
+        <div class="form-group">
+          <label>รายได้:</label>
+          <input type="text" name="mother_income">
+        </div>
+        <div class="form-group">
+          <label>เบอร์โทรศัพท์:</label>
+          <input type="text" name="mother_phone">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>ผู้ปกครองชื่อ:</label>
+          <input type="text" name="guardian_name">
+        </div>
+        <div class="form-group">
+          <label>อาชีพ:</label>
+          <input type="text" name="guardian_occupation">
+        </div>
+        <div class="form-group">
+          <label>รายได้:</label>
+          <input type="text" name="guardian_income">
+        </div>
+        <div class="form-group">
+          <label>เบอร์โทรศัพท์:</label>
+          <input type="text" name="guardian_phone">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>การอยู่อาศัย</h3>
+      <label>นักเรียนพักอาศัยอยู่กับ:</label>
+      <select name="live_with">
+        <option value="">-- กรุณาเลือก --</option>
+        <option>บิดาและมารดา</option>
+        <option>บิดา</option>
+        <option>มารดา</option>
+        <option>ผู้ปกครอง</option>
+      </select>
+
+      <label>วัตถุประสงค์ของการเยี่ยมบ้าน:</label>
+      <textarea name="visit_purpose" rows="3"></textarea>
+
+      <h3>ข้อมูลครอบครัว</h3>
+      <label>สภาพบ้าน:</label>
+      <textarea name="family_info" rows="3"></textarea>
+
+      <label>ฐานะทางเศรษฐกิจ:</label>
+      <textarea name="economic_status" rows="3"></textarea>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>ความสัมพันธ์กับครอบครัว:</label>
+          <select name="Family_relationships">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>อบอุ่น</option>
+            <option>เฉยๆ</option>
+            <option>ห่างเหิน</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>วิธีการที่ผู้ปกครองดูแลนักเรียน:</label>
+          <select name="Based_Parenting">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>เข้มงวดกวดขัน</option>
+            <option>ตามใจ</option>
+            <option>ใช้เหตุผล</option>
+            <option>ปล่อยปะละเลย</option>
+          </select>
+        </div>
+      </div>
+
+      <label>งานบ้านที่นักเรียนต้องรับผิดชอบ:</label>
+      <textarea name="house_duty" rows="3"></textarea>
+
+      <label>ความคิดเห็นผู้ปกครอง:</label>
+      <textarea name="parent_opinion" rows="3"></textarea>
+
+      <label>ความคิดเห็นครูที่ปรึกษา:</label>
+      <textarea name="teacher_opinion" rows="3"></textarea>
+    </div>
+
+    <h2>ส่วนที่ 2: แผนที่แสดงการเดินทางจากโรงเรียนไปบ้าน</h2>
+
+    <div class="form-section">
+      <div class="form-row">
+        <div class="form-group">
+          <label>ชื่อนักเรียน:</label>
+          <input type="text" name="student_name_map">
+        </div>
+        <div class="form-group">
+          <label>ชื่อเล่น:</label>
+          <input type="text" name="student_nickname_map">
+        </div>
+        <div class="form-group">
+          <label>ชั้น:</label>
+          <select name="class">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>ม.1</option><option>ม.2</option><option>ม.3</option>
+            <option>ม.4</option><option>ม.5</option><option>ม.6</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ห้อง:</label>
+          <select name="room">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>1</option><option>2</option><option>3</option>
+            <option>4</option><option>5</option><option>6</option>
+            <option>7</option><option>8</option><option>9</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>เลขที่:</label>
+          <input type="text" name="student_number">
+        </div>
+      </div>
+
+      <h3>ที่อยู่ปัจจุบัน</h3>
+      <div class="form-row">
+        <div class="form-group"><label>บ้านเลขที่:</label><input type="text" name="address_no"></div>
+        <div class="form-group"><label>หมู่ที่:</label><input type="text" name="moo"></div>
+        <div class="form-group"><label>ตำบล:</label><input type="text" name="subdistrict"></div>
+        <div class="form-group"><label>อำเภอ:</label><input type="text" name="district"></div>
+        <div class="form-group"><label>จังหวัด:</label><input type="text" name="province"></div>
+        <div class="form-group"><label>ถนน:</label><input type="text" name="road"></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>เบอร์โทรศัพท์:</label>
+          <input type="text" name="phone">
+        </div>
+        <div class="form-group">
+          <label>สถานที่ไปเยี่ยม:</label>
+          <select name="location">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>บ้าน</option><option>สถานประกอบการ</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>การเดินทางกลับบ้าน:</label>
+          <select name="travel_mode">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>เดิน</option><option>จักรยานยนต์</option>
+            <option>รถตู้/รถโดยสาร</option><option>ผู้ปกครองรับ-ส่ง</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ระยะทางจากโรงเรียนถึงบ้าน:</label>
+          <select name="distance">
+            <option value="">-- กรุณาเลือก --</option>
+            <option>1-5 กิโลเมตร</option>
+            <option>6-10 กิโลเมตร</option>
+            <option>11-15 กิโลเมตร</option>
+            <option>16-20 กิโลเมตร</option>
+            <option>มากกว่า 20 กิโลเมตร</option>
+          </select>
+        </div>
+      </div>
+
+      <label>อัปโหลดภาพแผนที่:</label>
+      <input type="file" name="map_image" accept="image/*">
+    </div>
+
+    <input type="submit" value="ส่งข้อมูล">
+    <input type="submit" value="อนุมัติ">
+  </form>
+</body>
+</html>
+
