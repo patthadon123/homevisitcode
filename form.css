@@ -1,0 +1,69 @@
+:root {
+    --primary-purple: #6f42c1;
+    --primary-purple-light: #8250df;
+    --primary-white: #ffffff;
+  }
+  
+  body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+
+  .form-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  }
+
+  .section-title {
+    color: var(--primary-white);
+    background-color: var(--primary-purple);
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  .form-label {
+    font-weight: 500;
+    color: #495057;
+  }
+
+  .form-control:focus, .form-select:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 0.2rem rgba(111, 66, 193, 0.25);
+  }
+
+  .btn-primary {
+    background-color: var(--primary-purple);
+    border-color: var(--primary-purple);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--primary-purple-light);
+    border-color: var(--primary-purple-light);
+  }
+
+  .form-section {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .form-section.purple-bg {
+    background-color: var(--primary-purple);
+    color: var(--primary-white);
+  }
+
+  .form-section.purple-bg .form-label {
+    color: var(--primary-white);
+  }
+
+  .form-section.purple-bg input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }

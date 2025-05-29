@@ -2,59 +2,182 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>หน้าครูที่ปรึกษา</title>
-  <link rel="stylesheet" href="tch.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="tch.css">
+ 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
-  <h1>ระบบติดตามข้อมูลการเยี่ยมบ้าน</h1>
-  <div class="info">
-    <div class="info-header">
-      <span><strong>ชื่อครูที่ปรึกษา:</strong> <span id="teacher-name">ครูสมชาย ใจดี</span></span>
-      <span><strong>ชื่อครูที่ปรึกษาร่วม:</strong> <span id="teacher-name">ครูสมหญิง ใจดี</span></span>
-      <span><strong>ห้อง:</strong> <span id="class-name"></span>ม.3/2</span></span>
+<body class="bg-light">
+  <div class="container py-4">
+    <h1 class="text-center mb-4">
+      <i class="fas fa-home text-purple me-2"></i>
+      ระบบติดตามข้อมูลการเยี่ยมบ้าน
+    </h1>
+    
+    <div class="card shadow-sm mb-4">
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <i class="fas fa-chalkboard-teacher text-purple me-2"></i>
+            <strong>ชื่อครูที่ปรึกษา:</strong> <span id="teacher-name">ครูสมชาย ใจดี</span>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-user-friends text-purple me-2"></i>
+            <strong>ชื่อครูที่ปรึกษาร่วม:</strong> <span id="co-teacher-name">ครูสมหญิง ใจดี</span>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-school text-purple me-2"></i>
+            <strong>ห้อง:</strong> <span id="class-name">ม.3/2</span>
+          </div>
+        </div>
+        
+        <div class="row g-3 text-center stats">
+          <div class="col">
+            <div class="p-3 border bg-white rounded">
+              <i class="fas fa-users fa-2x text-purple mb-2"></i>
+              <div class="stat-label">จำนวนนักเรียนทั้งหมด</div>
+              <div class="stat-value" id="total-students">-</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-white rounded">
+              <i class="fas fa-clipboard-list fa-2x text-purple mb-2"></i>
+              <div class="stat-label">กรอกข้อมูลแล้ว</div>
+              <div class="stat-value" id="filled-students">-</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-white rounded">
+              <i class="fas fa-check-circle fa-2x text-purple mb-2"></i>
+              <div class="stat-label">อนุมัติแล้ว</div>
+              <div class="stat-value" id="approved-students">-</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-white rounded">
+              <i class="fas fa-clock fa-2x text-purple mb-2"></i>
+              <div class="stat-label">รออนุมัติ</div>
+              <div class="stat-value" id="waiting-students">-</div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-white rounded">
+              <i class="fas fa-exclamation-circle fa-2x text-purple mb-2"></i>
+              <div class="stat-label">ยังไม่กรอก</div>
+              <div class="stat-value" id="notfilled-students">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="info-stats">
-      <span><strong>จำนวนนักเรียนทั้งหมด:</strong> <span id="total-students">-</span></span>
-      <span><strong>กรอกข้อมูลแล้ว:</strong> <span id="filled-students">-</span></span>
-      <span><strong>อนุมัติแล้ว:</strong> <span id="approved-students">-</span></span>
-      <span><strong>รออนุมัติ:</strong> <span id="waiting-students">-</span></span>
-      <span><strong>ยังไม่กรอก:</strong> <span id="notfilled-students">-</span></span>
+
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th><i class="fas fa-hashtag me-2"></i>เลขที่</th>
+                <th><i class="fas fa-user me-2"></i>ชื่อ - สกุล</th>
+                <th><i class="fas fa-info-circle me-2"></i>สถานะ</th>
+                <th><i class="fas fa-cogs me-2"></i>จัดการ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <a href="student_detail.html?id=001" class="text-decoration-none">
+                    <i class="fas fa-user-graduate me-2"></i>เด็กชาย
+                  </a>
+                </td>
+                <td><span class="badge status-waiting"><i class="fas fa-clock me-1"></i>รออนุมัติ</span></td>
+                <td>
+                  <button class="btn btn-outline-success btn-sm me-2" onclick="confirmApprove()">
+                    <i class="fas fa-check me-1"></i>อนุมัติ
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <a href="student_detail.html?id=002" class="text-decoration-none">
+                    <i class="fas fa-user-graduate me-2"></i>เด็กหญิง
+                  </a>
+                </td>
+                <td><span class="badge status-approved"><i class="fas fa-check me-1"></i>อนุมัติแล้ว</span></td>
+                <td><button class="btn btn-outline-danger btn-sm" onclick="confirmCancel()"><i class="fas fa-times me-1"></i>ยกเลิกอนุมัติ</button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="text-muted">
+                  <i class="fas fa-user-graduate me-2"></i>เด็กชาย ก บ
+                </td>
+                <td><span class="badge status-not-filled"><i class="fas fa-exclamation-circle me-1"></i>ยังไม่กรอกข้อมูล</span></td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
-  
-  
 
-  <table>
-    <thead>
-      <tr>
-        
-        <th>เลขที่</th>
-        <th>ชื่อ - สกุล</th>
-        <th>สถานะ</th>
-        <th>จัดการ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td><a href="student_detail.html?id=001">เด็กชาย</a></td>
-        <td><span class="status waiting">รออนุมัติ</span></td>
-        <td><button disabled>ยกเลิกอนุมัติ</button></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td><a href="student_detail.html?id=002">เด็กหญิง</a></td>
-        <td><span class="status approved">อนุมัติแล้ว</span></td>
-        <td><button onclick="alert('ยกเลิกอนุมัติแล้ว')">ยกเลิกอนุมัติ</button></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td><span style="color:gray;">เด็กชาย ก บ</span></td>
-        <td><span class="status not-filled">ยังไม่กรอกข้อมูล</span></td>
-        <td>-</td>
-      </tr>
-    </tbody>
-  </table>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function confirmApprove() {
+      Swal.fire({
+        title: '<i class="fas fa-question-circle text-success"></i> ยืนยันการอนุมัติ?',
+        text: "คุณต้องการอนุมัติข้อมูลใช่หรือไม่?",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#28a745',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<i class="fas fa-check"></i> ยืนยัน',
+        cancelButtonText: '<i class="fas fa-times"></i> ยกเลิก'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: '<i class="fas fa-check-circle text-success"></i> สำเร็จ!',
+            text: 'อนุมัติข้อมูลเรียบร้อยแล้ว',
+            icon: 'success',
+            confirmButtonColor: '#28a745'
+          });
+        }
+      });
+    }
+
+    function confirmCancel() {
+      Swal.fire({
+        title: '<i class="fas fa-exclamation-triangle text-warning"></i> ยืนยันการยกเลิกอนุมัติ?',
+        text: "คุณต้องการยกเลิกการอนุมัติใช่หรือไม่?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#8514d0',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<i class="fas fa-check"></i> ยืนยัน',
+        cancelButtonText: '<i class="fas fa-times"></i> ยกเลิก'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: '<i class="fas fa-check-circle text-success"></i> สำเร็จ!',
+            text: 'ยกเลิกการอนุมัติเรียบร้อยแล้ว',
+            icon: 'success',
+            confirmButtonColor: '#8514d0'
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
